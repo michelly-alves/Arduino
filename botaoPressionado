@@ -1,0 +1,17 @@
+int pushbotton = 2; 
+  
+void setup() {
+  pinMode (pushbotton, INPUT_PULLUP);
+  Serial.begin(96000);
+  digitalRead(pushbotton == LOW);
+}
+
+void loop() {
+  
+  while (digitalRead(pushbotton) == HIGH) // Se o botão for pressionado
+  {
+    Serial.println("BOTÃO DESPRESSIONADO");
+  }
+  while (digitalRead(pushbotton) == LOW);
+  Serial.println("BOTÃO PRESSIONADO");
+}
